@@ -13,7 +13,9 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "io.qameta.allure.android.runners.AllureAndroidJUnitRunner"
+
+        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -46,4 +48,8 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.4.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation 'io.qameta.allure:allure-kotlin-android:2.4.0'
+
+    androidTestImplementation"io.qameta.allure:allure-kotlin-model:2.4.0"
+    androidTestImplementation"io.qameta.allure:allure-kotlin-commons:2.4.0"
+    androidTestImplementation"io.qameta.allure:allure-kotlin-junit4:2.4.0"
 }
