@@ -1,5 +1,7 @@
 package ru.kkuzmichev.simpleappforespresso;
 
+
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -10,10 +12,12 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.filters.LargeTest;
 
 import org.junit.Rule;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+
 
 @LargeTest
 @RunWith(AllureAndroidJUnit4.class)
@@ -25,12 +29,19 @@ public class TextVerificationTest {
             new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
-    public void textVerification() {
+    public void textVerificationTest() {
         ViewInteraction mainText = onView(
                 withId(R.id.text_home)
         );
         mainText.check(
-                matches(withText("This is home fragment"))
+                matches(
+                        withText("This is home fragment")
+                )
         );
     }
+
+
 }
+
+// text_home
+// "This is home fragment"
